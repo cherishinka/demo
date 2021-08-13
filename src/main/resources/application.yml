@@ -1,0 +1,19 @@
+#https://spring.pleiades.io/spring-boot/docs/current/reference/html/application-properties.html#application-properties.core.logging.config
+
+#logger
+logging:
+  #采用相对路径方式将日志文件输出到【log/testLog.log】
+  #一下属性不可共用 可以相对路径，可以绝对路径
+  #logging.file.name
+  #logging.file.path 文件夹生成一个日志文件为 spring.log
+  file:
+    name: src/main/resources/log/myspringboot.log
+  #TRACE < DEBUG < INFO < WARN < ERROR < FATAL
+  level:
+    root: INFO
+    #不同目录下的日志可配置不同级别
+    org.springfromework.web: INFO
+    org.hibernate: ERROR
+  config: classpath:logging-config.xml
+
+
